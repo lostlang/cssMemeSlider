@@ -1,4 +1,115 @@
+body {
+	color: #2c2249;
+	background: #eddfbf;
+}
 
-input:checked ~ .discription label {
-	display: block;
+input {
+	display: none;
+}
+
+.slider {
+	display: grid;
+	gap: 1em;
+}
+
+.memes {
+	overflow: hidden;
+	img {
+		width: 100%;
+	}
+}
+
+.frame {
+	display: flex;
+	width: 400%;
+	height: 100%;
+}
+
+.discriptions {
+	overflow: hidden;
+	h2 {
+		width: 100%;
+	}
+}
+
+.buttons {
+	display: flex;
+	gap: 1em;
+}
+
+label {
+	cursor: pointer;
+}
+
+.custom-radio {
+	border-radius: 50%;
+	border: #07974a solid;
+	background: #07974a;
+	&:hover {
+		border-color: #cdb479;
+		background-color: #cdb479;
+	}
+}
+
+#meme1:checked~ .buttons label[for='meme1'] .custom-radio,
+#meme2:checked~ .buttons label[for='meme2'] .custom-radio,
+#meme3:checked~ .buttons label[for='meme3'] .custom-radio,
+#meme4:checked~ .buttons label[for='meme4'] .custom-radio {
+	background: none;
+	&:hover {
+		border-color: #cdb479;
+	}
+}
+
+@media (min-width: 800px) {
+	.slider {
+		width: 80%;
+		margin-top: 7vh;
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+
+	.memes {
+		max-height: 80vh;
+		grid-column: 1 / 3;
+		border-radius: 2em;
+	}
+
+	.discriptions {
+		grid-row: 2;
+	}
+
+	.buttons {
+		justify-content: end;
+		grid-row: 2;
+	}
+
+	.custom-radio {
+		height: 1em;
+		width: 1em;
+	}
+}
+
+@media (max-width: 800px) {
+	.slider {
+		width: 90%;
+		margin-top: 5vh;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+
+	.memes {
+		max-height: 60vh;
+		border-radius: 1em;
+	}
+
+	.buttons {
+		justify-content: center;
+		grid-row: 2;
+	}
+
+	.custom-radio {
+		height: 0.5em;
+		width: 0.5em;
+	}
 }
